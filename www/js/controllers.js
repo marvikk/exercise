@@ -10,6 +10,16 @@ angular.module('starter.controllers', [])
    $scope.showMe = false;
    $scope.showSuccess = false;
 
+   $scope.disableTap = function(){
+    container = document.getElementsByClassName('pac-container');
+    // disable ionic data tab
+    angular.element(container).attr('data-tap-disabled', 'true');
+    // leave input field if google-address-entry is selected
+    angular.element(container).on("click", function(){
+        document.getElementById('searchBar').blur();
+    });
+  };
+
   //autocomplete Google API
     var inputFrom = document.getElementById('from');
     var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);

@@ -9,7 +9,8 @@
       </ion-item>
       <ion-item>
       <div class='container'>
-      <input  id='from' class='input' type='text' placeholder='Enter city Name...' ng-model='data.query' />
+      <input  id='from' class='input' type='text' placeholder='Enter city Name...' ng-model='data.query'
+      ng-focus="disableTap()" />
       <button class='button' ng-click='getWeather()'>Search</button>
       </div>
       <div class='container' ng-show="showMe">
